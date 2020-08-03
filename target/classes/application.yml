@@ -1,0 +1,12 @@
+server:
+  port: 9200
+  servlet:
+    context-path: /security
+
+
+spring:
+  application:
+    name: security-manager-dwh
+
+
+
