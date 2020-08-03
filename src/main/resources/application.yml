@@ -6,14 +6,16 @@ server:
 
 spring:
   application:
-    name: security-manager-dwh
+    name: security-manager
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:mysql://192.168.118.50:3306/test
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
 
 
-druid:
-  url: jdbc:mysql://192.168.118.50:3306/test
-  username: root
-  password: root
-  initial-size: 1
-  min-idle: 1
-  max-active: 20
-  test-on-borrow: true
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:/mapper/*.xml
