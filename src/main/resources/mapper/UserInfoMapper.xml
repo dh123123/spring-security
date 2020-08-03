@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://www.ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.enable.springsecurity.dao.UserInfoDAO">
+
+    <select id="getUserByName" parameterType="string" resultType="com.enable.springsecurity.po.UserInfoPO">
+         select
+             user_id as userId,
+             user_name as userName,
+             login_id as loginId,
+             pass_word as passWord,
+             create_time as createTime,
+             creator as creator,
+             update_time as updateTime,
+             updator as updator
+         from user_info
+         <where>
+             <if test="userName != null and userName !=''">
+                 user_name=#{userName}
+             </if>
+         </where>
+    </select>
+
+</mapper>
